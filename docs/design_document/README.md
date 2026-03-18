@@ -6,4 +6,5 @@ The game targets real hardware (GBA / NDS), prioritizes deterministic simulation
 
 ## Table of Contents
 
-- [00 — Vision](00_vision.md)([ru](00_vision.ru.md))
+- [Vision](00_vision.md) ([ru](00_vision.ru.md))
+- [Core Loop](01_core_loop.md) ([ru](01_core_loop.ru.md))
