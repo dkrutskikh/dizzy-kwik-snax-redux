@@ -1,4 +1,6 @@
-# Short Description
+# KwikSnax Redux — Vision
+
+## Short Description
 
 **KwikSnax Redux** is a modern remake and spiritual successor to the original *KwikSnax*, designed as a fast-paced arcade puzzle-action game for handheld gaming consoles.
 
@@ -15,7 +17,7 @@ KwikSnax Redux also serves as a showcase project for the [ToyGine2](https://gith
 - Ensure stable performance on limited handheld hardware
 - Support cooperative gameplay
 - Make the game suitable for speed-running
-- Use the project as a technical showcase for the ToyGine engine
+- Use the project as a technical showcase for the ToyGine2 engine
 - Respect the constraints and behavior of real console hardware
 - Provide high replay value through simple but deep mechanics
 
@@ -29,7 +31,7 @@ KwikSnax Redux also serves as a showcase project for the [ToyGine2](https://gith
 - Cooperative multiplayer mode
 - Short play sessions with fast restart
 - Mechanics designed for mastery and optimization
-- Used as a demonstration project for the ToyGine engine
+- Used as a demonstration project for the ToyGine2 engine
 
 ## Project Tone
 
