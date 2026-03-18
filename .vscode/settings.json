@@ -3,7 +3,10 @@
     "cSpell.language": "en,ru",
     "cSpell.words": [
         "KwikSnax",
-        "toygine"
+        "toygine",
+        "приоритетнее",
+        "тайминги",
+        "таймингов"
     ],
     "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.clang_format_fallbackStyle": "Google",
