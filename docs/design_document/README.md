@@ -12,3 +12,4 @@ The game targets real hardware (GBA / NDS), prioritizes deterministic simulation
 - [Gameplay](03_gameplay.md) ([ru](03_gameplay.ru.md))
 - [Controls](04_controls.md) ([ru](04_controls.ru.md))
 - [Levels](05_levels.md) ([ru](05_levels.ru.md))
+- [Art](06_art.md) ([ru](06_art.ru.md))
