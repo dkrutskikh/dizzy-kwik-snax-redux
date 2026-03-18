@@ -2,7 +2,8 @@
     "clang-format.fallbackStyle": "Google",
     "cSpell.language": "en,ru",
     "cSpell.words": [
-        "KwikSnax"
+        "KwikSnax",
+        "toygine"
     ],
     "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.clang_format_fallbackStyle": "Google",
