@@ -61,7 +61,7 @@ Challenge must arise from:
 - positioning
 - decision making
 
-Gameplay must remain fair and predictable. When random elements are present, they must not break determinism or player control.
+Gameplay must remain fair and predictable. When random elements are present, they must not break determinism or player control. The RNG source is a documented pseudorandom generator (e.g., a named algorithm). Seeds are generated once per session or per level (e.g., from a server-provided seed, timestamp, or player inputs) and stored for the run. Seed advancement cadence is fixed: one advance per game tick (or per defined event) so that the same seed and input sequence reproduces the same RNG stream. Replay and network sync reconstruct the same stream by reusing the stored seed and replaying inputs; implementers map RNG source, seed generation, and seed advancement to concrete functions/classes.
 
 ## Level Goals
 

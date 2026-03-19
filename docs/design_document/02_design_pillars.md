@@ -2,11 +2,14 @@
 
 ## Precise Arcade Responsiveness
 
-Gameplay must be fast, precise, and fully predictable.
-Every player action must produce an immediate and consistent result without hidden delays or ambiguous states.
+Gameplay must be precise and fully predictable. Acceptance criteria:
 
-Controls must feel as strict and responsive as in classic arcade games.
-Changes that reduce clarity, timing accuracy, or control precision are considered undesirable.
+- Input-to-action latency: ≤16 ms (1 frame at 60 Hz) or ≤8 ms (1 frame at 120 Hz), whichever matches the target refresh rate. Measured from input event to first visible/game-state effect.
+- Timing jitter: ≤4 ms peak-to-peak for input-to-action delay across consecutive samples.
+- Simulation step: physics and controls update in a single step per frame; step budget ≤8 ms so that 60 Hz is sustained.
+- Pass/fail: 99th percentile input latency must meet the target over at least 10,000 samples in automated or manual test runs.
+
+Every player action must produce a consistent result. Deterministic simulation step and fixed update order ensure reproducible behavior. Changes that increase latency, jitter, or step time beyond these thresholds are considered undesirable.
 
 
 ## Real Hardware First

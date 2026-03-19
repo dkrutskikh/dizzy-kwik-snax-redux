@@ -21,7 +21,7 @@ The style combines:
 - bright colors
 - clear shapes
 
-Animations must be short and recognizable from silhouette or motion.
+Animations must be recognizable from silhouette or motion. Maximum length for looped or gameplay animations: 12 frames or 200 ms at 60 FPS. Maximum keyframe count per animation is defined in the pipeline (e.g., 8 keyframes for silhouette clarity). Short one-off effects may use fewer frames (e.g., 4–6).
 
 ## Palettes
 
@@ -29,10 +29,10 @@ Color palettes must respect the limitations of handheld consoles.
 
 Rules:
 
-- limited number of colors per object
-- use of predefined palettes
-- high contrast between background and gameplay elements
-- identical colors must have consistent meaning
+- Maximum 4 colors per sprite. Maximum 16 colors per hardware palette.
+- Use predefined palettes only.
+- Minimum contrast ratio 4.5:1 between gameplay foreground and background (WCAG AA–equivalent).
+- Identical hex or palette indices map to a named semantic table (e.g., "player_primary", "hazard") so validation is deterministic; the same color has one meaning per context.
 
 Palette separation:
 

@@ -50,13 +50,13 @@ Required sound categories:
 - danger appearance
 - interface events
 
-Sounds must respect the limitations of the target platform:
+Sounds must respect the limitations of the target platform. Use the following numeric budgets unless a platform override applies:
 
-- limited number of channels
-- limited sample rate
-- limited volume range
+- Maximum simultaneous channels: 8 (configurable per platform; mobile/tablet/console tiers may define lower values, e.g., 4–6).
+- Sample rate: 22050 Hz or 32768 Hz as defined for the target hardware.
+- Volume range: 0.0–1.0 linear or equivalent dB range (e.g., -60 dB to 0 dB); all mixing uses the same scale.
 
-Sounds affecting gameplay must always have priority.
+Platform-specific overrides are documented in the audio module. Sounds affecting gameplay must always have priority.
 
 ## Dynamics
 
