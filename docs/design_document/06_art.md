@@ -72,7 +72,14 @@ Object requirements:
 - bonuses must differ in color or shape
 - interactive elements must be noticeable
 
-Sprite sizes must fit the limitations of the target platform and must not overload the screen.
+Sprite and texture constraints (handheld GBA / NDS primary; desktop build may use larger caps where documented):
+
+- Maximum gameplay sprite canvas: 128×128 px per character or large object; 64×64 px for small props; UI icons 32×32 px.
+- Maximum atlas / texture: 2048×2048 px per texture; maximum 256 distinct sprite cells referenced per atlas build.
+- Memory budget: ≤100 KB uncompressed source per gameplay sprite file (PNG or project format); ≤2 MB per atlas sheet after packing.
+- Scaling: on target handheld hardware, 1 game pixel maps 1:1 to the physical LCD pixel grid for the primary mode; no fractional UI scale on hardware paths. Desktop / emulator builds may use integer scale factors only (1×, 2×, 3×) from a fixed table.
+- Concurrent on-screen sprites: maximum 64 drawn sprites per frame on handheld targets; maximum 200 on desktop debug builds unless a level overrides with a lower cap in data.
+- Pixel coverage: moving gameplay sprites must not cover more than 40% of the play-field pixel area in aggregate per frame (reject or LOD if exceeded).
 
 ## UI / HUD
 
@@ -85,13 +92,7 @@ Rules:
 - important information must always be visible
 - UI must not overlap gameplay objects
 
-HUD displays:
-
-- score
-- number of lives
-- level number
-- bonuses
-- player status
+HUD elements (art perspective) are laid out per the full specification in [UX](08_ux.md), which defines enemy count, combo counter, level timer, second player status, and update rules.
 
 On dual-screen systems:
 

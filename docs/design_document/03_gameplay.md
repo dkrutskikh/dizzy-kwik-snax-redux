@@ -20,7 +20,7 @@
 - Points are awarded for collecting items, defeating enemies, and completing levels.
 - Combo window: a combo is active for N seconds after a successful collect or defeat. The window resets on each successful action within the window. The combo resets on miss, taking damage, or after N seconds of no qualifying action (inactivity). Example: N = 3 seconds.
 - Multiplier formula: score multiplier = 1 + floor(combo_count / K), capped at a maximum (e.g., K = 3, cap = 5). Alternative: base_score * (1 + combo_count * M) with M a fixed constant and cap applied. Exact constants (K, M, cap) are defined in the scoring configuration.
-- Completing a level before the par time and without errors grants bonus points (see 01_core_loop.md).
+- Completing a level before the par time and without errors grants bonus points (see [Core Loop](01_core_loop.md)).
 - Combo and score mechanics reward route optimization and precise timing.
 
 ## Object Types
