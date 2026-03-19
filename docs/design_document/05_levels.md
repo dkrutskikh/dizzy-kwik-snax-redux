@@ -21,7 +21,7 @@ Level layouts must support:
 - tactical decisions
 - cooperative gameplay
 
-On dual-screen systems, the main screen displays the play-field. The secondary screen shows score, status, or auxiliary information.
+On dual-screen systems, the main screen displays the play-field. The secondary screen shows information, menus, or statistics.
 
 ## Pace
 

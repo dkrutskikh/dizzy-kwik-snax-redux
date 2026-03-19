@@ -21,7 +21,7 @@ The style combines:
 - bright colors
 - clear shapes
 
-Animations must be recognizable from silhouette or motion. Maximum length for looped or gameplay animations: 12 frames or 200 ms at 60 FPS. Maximum keyframe count per animation is defined in the pipeline (e.g., 8 keyframes for silhouette clarity). Short one-off effects may use fewer frames (e.g., 4–6).
+Animations must be recognizable from silhouette or motion. Maximum length for looped or gameplay animations: 200 ms. Maximum keyframe count per animation is defined in the pipeline (e.g., 8 keyframes for silhouette clarity). Short one-off effects may use shorter durations (e.g., 67–100 ms).
 
 ## Palettes
 
@@ -98,4 +98,4 @@ On dual-screen systems:
 - the main screen is used for the play-field
 - the secondary screen is used for HUD, statistics, or auxiliary information
 
-UI animations must be short and must not distract from gameplay.
+UI animations must be ≤200 ms and must not distract from gameplay.
