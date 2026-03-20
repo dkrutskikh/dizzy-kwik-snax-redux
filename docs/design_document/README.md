@@ -8,3 +8,10 @@ The game targets real hardware (GBA / NDS), prioritizes deterministic simulation
 
 - [Vision](00_vision.md) ([ru](00_vision.ru.md))
 - [Core Loop](01_core_loop.md) ([ru](01_core_loop.ru.md))
+- [Design Pillars](02_design_pillars.md) ([ru](02_design_pillars.ru.md))
+- [Gameplay](03_gameplay.md) ([ru](03_gameplay.ru.md))
+- [Controls](04_controls.md) ([ru](04_controls.ru.md))
+- [Levels](05_levels.md) ([ru](05_levels.ru.md))
+- [Art](06_art.md) ([ru](06_art.ru.md))
+- [Audio](07_audio.md) ([ru](07_audio.ru.md))
+- [UX](08_ux.md) ([ru](08_ux.ru.md))
