@@ -14,7 +14,7 @@ Level themes may include:
 - fairy-tale villages
 - abstract gameplay spaces
 
-The environment should feel like part of a living world, while still following arcade-style logic. Objects and enemies exist for gameplay purposes rather than realistic storytelling. The story is minimal and serves only as background for the game.
+The environment uses recurring visual motifs, prop sets, and naming so arenas read as fragments of one fantasy setting. Arcade logic applies: object and enemy behavior follows gameplay rules only, not narrative simulation. Objects and enemies exist for gameplay purposes rather than realistic storytelling. The story is minimal and serves only as background for the game.
 
 ## Main Character
 
@@ -102,4 +102,4 @@ Victory should look:
 - joyful
 - celebratory
 
-The lore should create the feeling that the player is inside a classic arcade world, where everything exists to support fun and fast gameplay.
+Lore is limited to visual and textual flavor in level data (themes, backgrounds, optional strings). Presentation matches classic arcade: mascot hero, non-violent defeat, celebratory victory; no mandatory plot between levels. All lore assets and copy exist only to support the gameplay specification in other design documents.

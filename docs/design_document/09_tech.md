@@ -81,7 +81,7 @@ it must not be required for gameplay.
 
 Planned platforms:
 
-- Nintendo Game Boy Advance
+- Nintendo GBA
 - Nintendo DS
 - PC (Windows, Linux, macOS)
 

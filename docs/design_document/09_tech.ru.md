@@ -80,7 +80,7 @@
 
 Планируемые платформы:
 
-- Nintendo GameBoyAdvance
+- Nintendo GBA
 - Nintendo DS
 - PC (Windows, Linux, macOS)
 
