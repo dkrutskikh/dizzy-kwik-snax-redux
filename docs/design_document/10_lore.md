@@ -93,7 +93,7 @@ The game must not feel:
 Defeat should look:
 
 - funny
-- quick
+- defeat presentation completes within 2 s (animation and feedback)
 - non-violent
 
 Victory should look:
@@ -102,4 +102,4 @@ Victory should look:
 - joyful
 - celebratory
 
-Lore is limited to visual and textual flavor in level data (themes, backgrounds, optional strings). Presentation matches classic arcade: mascot hero, non-violent defeat, celebratory victory; no mandatory plot between levels. All lore assets and copy exist only to support the gameplay specification in other design documents.
+Lore is limited to visual and textual flavor in each level's data (themes, backgrounds, optional strings). Presentation matches classic arcade: mascot hero, non-violent defeat, celebratory victory; no mandatory plot between levels. All lore assets and copy exist only to support the gameplay specification in other design documents.
