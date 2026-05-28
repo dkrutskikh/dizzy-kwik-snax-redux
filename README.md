@@ -1,4 +1,4 @@
-# KwikSnax Redux
+# Dizzy KwikSnax Redux
 
 KwikSnax Redux is an upcoming homebrew arcade game for the Game Boy Advance.
 
