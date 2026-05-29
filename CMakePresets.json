@@ -1,0 +1,51 @@
+{
+    "version": 10,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 31,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "release-binary-dir",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/out/build/${presetName}"
+        },
+        {
+            "name": "base-release",
+            "inherits": "release-binary-dir",
+            "hidden": true,
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "ENABLE_PUBLIC_RELEASE": "$env{ENABLE_PUBLIC_RELEASE}",
+                "ENABLE_PCH": "OFF"
+            }
+        },
+        {
+            "name": "gba-ninja-release",
+            "displayName": "Nintendo GBA release",
+            "description": "Nintendo GBA Ninja",
+            "inherits": "base-release",
+            "toolchainFile": "$env{DEVKITPRO}/cmake/GBA.cmake"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default-debug",
+            "hidden": true,
+            "configuration": "Debug"
+        },
+        {
+            "name": "default-release",
+            "hidden": true,
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "gba-ninja-release",
+            "configurePreset": "gba-ninja-release",
+            "inherits": "default-release"
+        }
+    ]
+}
