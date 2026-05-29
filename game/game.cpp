@@ -22,13 +22,11 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+#include <cstdio>
+
 #include <gba_console.h>
-#include <gba_input.h>
 #include <gba_interrupt.h>
 #include <gba_systemcalls.h>
-#include <gba_video.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int main(void) {
   irqInit();

@@ -18,12 +18,7 @@
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "PACKAGE_FILE_NAME": "$env{BUILD_FILE_NAME}",
-                "PACKAGE_NAME_SUFFIX": "$env{BUILD_NAME_SUFFIX}",
                 "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-                "TOYGINE_BUILD_BENCHMARKS": "OFF",
-                "TOYGINE_BUILD_SAMPLES": "OFF",
-                "TOYGINE_BUILD_TESTS": "OFF",
                 "ENABLE_PUBLIC_RELEASE": "$env{ENABLE_PUBLIC_RELEASE}",
                 "ENABLE_PCH": "OFF"
             }

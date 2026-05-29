@@ -6,6 +6,6 @@
 *.hpp           text
 *.inl           text
 
-CMakeLists.txt  text eol=crlf
-*.cmake         text eol=crlf
-*.cmake.in      text eol=crlf
+CMakeLists.txt  text
+*.cmake         text
+*.cmake.in      text
