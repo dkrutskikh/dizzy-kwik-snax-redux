@@ -68,11 +68,14 @@ This module defines the following variables:
 ``DEVKITPRO_GBA_FOUND``, ``DEVKITPRO_NDS_FOUND``, ``DEVKITPRO_3DS_FOUND``, ``DEVKITPRO_SWITCH_FOUND``
   ``TRUE`` if the corresponding requested component was found. Defined only for components listed in ``COMPONENTS``.
 
+``DEVKITA64``
+  Root of the devkitA64 toolchain, set when its compiler is present.
+
 ``DEVKITARM``
   Root of the devkitARM toolchain, set when its compiler is present.
 
-``DEVKITA64``
-  Root of the devkitA64 toolchain, set when its compiler is present.
+``DEVKITPPC``
+  Root of the devkitPPC toolchain, set when its compiler is present.
 #]=======================================================================]
 
 # === Helper macro for library detection ===
@@ -109,7 +112,7 @@ endmacro()
 set(_DEVKITPRO_POSSIBLE_PATHS $ENV{DEVKITPRO} /opt/devkitpro C:/devkitPro)
 
 find_path(DEVKITPRO_ROOT
-  NAMES devkitARM devkitA64
+  NAMES devkitA64 devkitARM devkitPPC
   PATHS ${_DEVKITPRO_POSSIBLE_PATHS}
   NO_DEFAULT_PATH
   DOC "Root directory of devkitPro installation"
@@ -118,20 +121,6 @@ find_path(DEVKITPRO_ROOT
 if (DEVKITPRO_ROOT)
   set(DEVKITPRO_FOUND TRUE)
   message(STATUS "Found devkitPro at: ${DEVKITPRO_ROOT}")
-
-  # === devkitARM toolchain ===
-  find_program(DEVKITARM_GCC arm-none-eabi-gcc
-    PATHS "${DEVKITPRO_ROOT}/devkitARM/bin" NO_DEFAULT_PATH
-    DOC "Path to devkitPro ARM gcc compiler")
-
-  if (DEVKITARM_GCC)
-    get_filename_component(DEVKITARM "${DEVKITARM_GCC}" DIRECTORY)
-    get_filename_component(DEVKITARM "${DEVKITARM}" DIRECTORY)
-
-    message(STATUS "Found devkitARM toolchain: ${DEVKITARM}")
-  endif ()
-
-  unset(DEVKITARM_GCC)
 
   # === devkitA64 toolchain ===
   find_program(DEVKITA64_GCC aarch64-none-elf-gcc
@@ -147,7 +136,35 @@ if (DEVKITPRO_ROOT)
 
   unset(DEVKITA64_GCC)
 
-  mark_as_advanced(DEVKITARM DEVKITA64)
+  # === devkitARM toolchain ===
+  find_program(DEVKITARM_GCC arm-none-eabi-gcc
+    PATHS "${DEVKITPRO_ROOT}/devkitARM/bin" NO_DEFAULT_PATH
+    DOC "Path to devkitPro ARM gcc compiler")
+
+  if (DEVKITARM_GCC)
+    get_filename_component(DEVKITARM "${DEVKITARM_GCC}" DIRECTORY)
+    get_filename_component(DEVKITARM "${DEVKITARM}" DIRECTORY)
+
+    message(STATUS "Found devkitARM toolchain: ${DEVKITARM}")
+  endif ()
+
+  unset(DEVKITARM_GCC)
+
+  # === devkitPPC toolchain ===
+  find_program(DEVKITPPC_GCC powerpc-none-eabi-gcc
+    PATHS "${DEVKITPRO_ROOT}/devkitPPC/bin" NO_DEFAULT_PATH
+    DOC "Path to devkitPro PPC gcc compiler")
+
+  if (DEVKITPPC_GCC)
+    get_filename_component(DEVKITPPC "${DEVKITPPC_GCC}" DIRECTORY)
+    get_filename_component(DEVKITPPC "${DEVKITPPC}" DIRECTORY)
+
+    message(STATUS "Found devkitPPC toolchain: ${DEVKITPPC}")
+  endif ()
+
+  unset(DEVKITPPC_GCC)
+
+  mark_as_advanced(DEVKITARM DEVKITA64 DEVKITPPC)
 
   # === Components ===
   if ("gba" IN_LIST DevkitPro_FIND_COMPONENTS)

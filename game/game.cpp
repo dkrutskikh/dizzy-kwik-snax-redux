@@ -24,18 +24,64 @@
 
 #include <cstdio>
 
+#ifdef __GBA__
+
 #include <gba_console.h>
 #include <gba_interrupt.h>
 #include <gba_systemcalls.h>
 
-int main(void) {
+int main() {
   irqInit();
   irqEnable(IRQ_VBLANK);
 
   consoleDemoInit();
 
-  iprintf("\x1b[10;10HHello World!\n");
+  iprintf("\x1b[9;7HKwik Snax Redux!\n");
 
   while (1)
     VBlankIntrWait();
 }
+
+#endif // __GBA__
+
+#ifdef __NDS__
+
+#include <nds.h>
+
+int main() {
+  consoleDemoInit();
+
+  iprintf("\x1b[11;8HKwik Snax Redux!\n");
+
+  while (pmMainLoop())
+    swiWaitForVBlank();
+
+  return 0;
+}
+
+#endif // __NDS__
+
+#ifdef __3DS__
+
+#include <3ds.h>
+
+int main() {
+  gfxInitDefault();
+
+  consoleInit(GFX_BOTTOM, NULL);
+
+  iprintf("\x1b[14;12HKwik Snax Redux!\n");
+
+  // Main loop
+  while (aptMainLoop()) {
+    gfxFlushBuffers();
+    gfxSwapBuffers();
+
+    gspWaitForVBlank();
+  }
+
+  gfxExit();
+  return 0;
+}
+
+#endif // __3DS__

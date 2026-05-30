@@ -29,6 +29,20 @@
             "description": "Nintendo GBA Ninja",
             "inherits": "base-release",
             "toolchainFile": "$env{DEVKITPRO}/cmake/GBA.cmake"
+        },
+        {
+            "name": "nds-ninja-release",
+            "displayName": "Nintendo NDS release",
+            "description": "Nintendo NDS Ninja",
+            "inherits": "base-release",
+            "toolchainFile": "$env{DEVKITPRO}/cmake/NDS.cmake"
+        },
+        {
+            "name": "3ds-ninja-release",
+            "displayName": "Nintendo 3DS release",
+            "description": "Nintendo 3DS Ninja",
+            "inherits": "base-release",
+            "toolchainFile": "$env{DEVKITPRO}/cmake/3DS.cmake"
         }
     ],
     "buildPresets": [
@@ -45,6 +59,16 @@
         {
             "name": "gba-ninja-release",
             "configurePreset": "gba-ninja-release",
+            "inherits": "default-release"
+        },
+        {
+            "name": "nds-ninja-release",
+            "configurePreset": "nds-ninja-release",
+            "inherits": "default-release"
+        },
+        {
+            "name": "3ds-ninja-release",
+            "configurePreset": "3ds-ninja-release",
             "inherits": "default-release"
         }
     ]
