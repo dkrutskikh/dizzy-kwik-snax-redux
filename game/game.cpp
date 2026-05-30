@@ -63,7 +63,7 @@ int main() {
 
 #ifdef __3DS__
 
-#include <3DS.h>
+#include <3ds.h>
 
 int main() {
   gfxInitDefault();
