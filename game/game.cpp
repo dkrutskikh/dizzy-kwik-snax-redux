@@ -30,7 +30,7 @@
 #include <gba_interrupt.h>
 #include <gba_systemcalls.h>
 
-int main(void) {
+int main() {
   irqInit();
   irqEnable(IRQ_VBLANK);
 
@@ -48,7 +48,7 @@ int main(void) {
 
 #include <nds.h>
 
-int main(void) {
+int main() {
   consoleDemoInit();
 
   iprintf("\x1b[11;8HKwik Snax Redux!\n");
@@ -65,7 +65,7 @@ int main(void) {
 
 #include <3DS.h>
 
-int main(int argc, char ** argv) {
+int main() {
   gfxInitDefault();
 
   consoleInit(GFX_BOTTOM, NULL);
