@@ -43,6 +43,20 @@
             "description": "Nintendo 3DS Ninja",
             "inherits": "base-release",
             "toolchainFile": "$env{DEVKITPRO}/cmake/3DS.cmake"
+        },
+        {
+            "name": "gamecube-ninja-release",
+            "displayName": "Nintendo GameCube release",
+            "description": "Nintendo GameCube Ninja",
+            "inherits": "base-release",
+            "toolchainFile": "$env{DEVKITPRO}/cmake/GameCube.cmake"
+        },
+        {
+            "name": "wii-ninja-release",
+            "displayName": "Nintendo Wii release",
+            "description": "Nintendo Wii Ninja",
+            "inherits": "base-release",
+            "toolchainFile": "$env{DEVKITPRO}/cmake/Wii.cmake"
         }
     ],
     "buildPresets": [
@@ -69,6 +83,16 @@
         {
             "name": "3ds-ninja-release",
             "configurePreset": "3ds-ninja-release",
+            "inherits": "default-release"
+        },
+        {
+            "name": "gamecube-ninja-release",
+            "configurePreset": "gamecube-ninja-release",
+            "inherits": "default-release"
+        },
+        {
+            "name": "wii-ninja-release",
+            "configurePreset": "wii-ninja-release",
             "inherits": "default-release"
         }
     ]
