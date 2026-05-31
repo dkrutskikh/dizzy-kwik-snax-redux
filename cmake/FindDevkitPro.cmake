@@ -27,15 +27,15 @@ FindDevkitPro
 Detect a devkitPro installation and its platform components.
 
 Locates the devkitPro root and, for each requested component, its platform library and headers (Nintendo GBA,
-Nintendo DS, Nintendo 3DS, Nintendo Switch). The module never fails when a component is missing: it reports what was
-found and what was not, leaving the decision to the caller.
+Nintendo DS, Nintendo 3DS, Nintendo Switch, Nintendo GameCube, Nintendo Wii). The module never fails when a component is
+missing: it reports what was found and what was not, leaving the decision to the caller.
 
-The installation root is searched, in order, in the ``DEVKITPRO`` environment
-variable, ``/opt/devkitpro``, then ``C:/devkitPro``.
+The installation root is searched, in order, in the ``DEVKITPRO`` environment variable, ``/opt/devkitpro``,
+then ``C:/devkitPro``.
 
 .. code-block:: cmake
 
-  find_package(DevkitPro COMPONENTS gba nds 3ds switch)
+  find_package(DevkitPro COMPONENTS gba nds 3ds switch gamecube wii)
 
 Components
 ^^^^^^^^^^
@@ -54,6 +54,12 @@ Each requested component is searched independently:
 ``switch``
   Nintendo Switch library (``libnx``, header ``switch.h``).
 
+``gamecube``
+  Nintendo GameCube library (``libogc`` from ``lib/cube``, header ``gccore.h``). Built with the devkitPPC toolchain.
+
+``wii``
+  Nintendo Wii library (``libogc`` from ``lib/wii``, header ``gccore.h``). Built with the devkitPPC toolchain.
+
 Result Variables
 ^^^^^^^^^^^^^^^^^
 
@@ -65,7 +71,7 @@ This module defines the following variables:
 ``DEVKITPRO_ROOT``
   Root directory of the devkitPro installation.
 
-``DEVKITPRO_GBA_FOUND``, ``DEVKITPRO_NDS_FOUND``, ``DEVKITPRO_3DS_FOUND``, ``DEVKITPRO_SWITCH_FOUND``
+``DEVKITPRO_GBA_FOUND``, ``DEVKITPRO_NDS_FOUND``, ``DEVKITPRO_3DS_FOUND``, ``DEVKITPRO_SWITCH_FOUND``, ``DEVKITPRO_GAMECUBE_FOUND``, ``DEVKITPRO_WII_FOUND``
   ``TRUE`` if the corresponding requested component was found. Defined only for components listed in ``COMPONENTS``.
 
 ``DEVKITA64``
@@ -79,7 +85,17 @@ This module defines the following variables:
 #]=======================================================================]
 
 # === Helper macro for library detection ===
+# Usage: _find_devkitpro_lib(NAME HEADER LIBNAME SUBDIR [LIB_VARIANT])
+# Headers are searched in ${SUBDIR}/include. Libraries are searched in ${SUBDIR}/lib, or in
+# ${SUBDIR}/lib/${LIB_VARIANT} when an optional variant is given (e.g. libogc's cube/wii subdirs).
 macro(_find_devkitpro_lib NAME HEADER LIBNAME SUBDIR)
+  set(_lib_dir ${DEVKITPRO_ROOT}/${SUBDIR}/lib)
+  set(_label ${SUBDIR})
+  if (${ARGC} GREATER 4)
+    set(_lib_dir ${_lib_dir}/${ARGV4})
+    set(_label "${SUBDIR}/lib/${ARGV4}")
+  endif ()
+
   if (DEVKITPRO_FOUND)
     find_path(${NAME}_INCLUDE_DIR
       ${HEADER}
@@ -88,25 +104,27 @@ macro(_find_devkitpro_lib NAME HEADER LIBNAME SUBDIR)
     )
     find_library(${NAME}_LIBRARY
       NAMES ${LIBNAME}
-      PATHS ${DEVKITPRO_ROOT}/${SUBDIR}/lib
+      PATHS ${_lib_dir}
       NO_DEFAULT_PATH
     )
 
     if (${NAME}_INCLUDE_DIR AND ${NAME}_LIBRARY)
       set(${NAME}_FOUND TRUE)
-      message(STATUS "Found ${SUBDIR}: ${${NAME}_LIBRARY}")
+      message(STATUS "Found ${_label}: ${${NAME}_LIBRARY}")
     else ()
       set(${NAME}_FOUND FALSE)
-      message(STATUS "Not found: ${SUBDIR}")
+      message(STATUS "Not found: ${_label}")
     endif ()
   else ()
     set(${NAME}_FOUND FALSE)
-    message(STATUS "Skipping ${SUBDIR} search (devkitPro not found)")
+    message(STATUS "Skipping ${_label} search (devkitPro not found)")
   endif ()
 
   mark_as_advanced(${NAME}_FOUND)
   unset(${NAME}_INCLUDE_DIR)
   unset(${NAME}_LIBRARY)
+  unset(_label)
+  unset(_lib_dir)
 endmacro()
 
 set(_DEVKITPRO_POSSIBLE_PATHS $ENV{DEVKITPRO} /opt/devkitpro C:/devkitPro)
@@ -178,6 +196,12 @@ if (DEVKITPRO_ROOT)
   endif ()
   if ("switch" IN_LIST DevkitPro_FIND_COMPONENTS)
     _find_devkitpro_lib(DEVKITPRO_SWITCH switch.h nx libnx)
+  endif ()
+  if ("gamecube" IN_LIST DevkitPro_FIND_COMPONENTS)
+    _find_devkitpro_lib(DEVKITPRO_GAMECUBE gccore.h ogc libogc cube)
+  endif ()
+  if ("wii" IN_LIST DevkitPro_FIND_COMPONENTS)
+    _find_devkitpro_lib(DEVKITPRO_WII gccore.h ogc libogc wii)
   endif ()
 
 else ()

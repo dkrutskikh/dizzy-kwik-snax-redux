@@ -40,7 +40,7 @@ set(CMAKE_C_STANDARD 17)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
-find_package(DevkitPro COMPONENTS gba nds 3ds)
+find_package(DevkitPro COMPONENTS gba nds 3ds switch gamecube wii)
 
 if (NOT DEVKITPRO_FOUND)
 message(FATAL_ERROR "devkitPro not found. Install devkitPro and ensure DEVKITPRO is set.")
@@ -50,7 +50,9 @@ list(APPEND CMAKE_MODULE_PATH "${DEVKITPRO_ROOT}/cmake")
 
 #include(GBA)
 #include(NDS)
-include(3DS)
+#include(3DS)
+#include(GameCube)
+include(Wii)
 
 message(STATUS "${CMAKE_CXX_COMPILER_ID} version: ${CMAKE_CXX_COMPILER_VERSION}")
 
@@ -66,4 +68,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 
 #gba_create_rom(${PROJECT_NAME})
 #nds_create_rom(${PROJECT_NAME})
-ctr_create_3dsx(${PROJECT_NAME})
+#ctr_create_3dsx(${PROJECT_NAME})
+#ogc_create_dol(${PROJECT_NAME})
+ogc_create_dol(${PROJECT_NAME})

@@ -40,6 +40,8 @@ int main() {
 
   while (1)
     VBlankIntrWait();
+
+  return 0;
 }
 
 #endif // __GBA__
@@ -85,3 +87,63 @@ int main() {
 }
 
 #endif // __3DS__
+
+#ifdef __gamecube__
+
+#include <gccore.h>
+
+int main() {
+  VIDEO_Init();
+
+  auto * rmode = VIDEO_GetPreferredMode(NULL);
+
+  auto * framebuffer = MEM_K0_TO_K1(SYS_AllocateFramebuffer(rmode));
+  console_init(framebuffer, 20, 20, rmode->fbWidth, rmode->xfbHeight, rmode->fbWidth * VI_DISPLAY_PIX_SZ);
+
+  VIDEO_Configure(rmode);
+  VIDEO_SetNextFramebuffer(framebuffer);
+  VIDEO_SetBlack(FALSE);
+  VIDEO_Flush();
+  VIDEO_WaitVSync();
+  if (rmode->viTVMode & VI_NON_INTERLACE)
+    VIDEO_WaitVSync();
+
+  printf("\nKwik Snax Redux!\n");
+
+  while (SYS_MainLoop())
+    VIDEO_WaitVSync();
+
+  return 0;
+}
+
+#endif // __gamecube__
+
+#ifdef __wii__
+
+#include <gccore.h>
+
+int main() {
+  VIDEO_Init();
+
+  auto * rmode = VIDEO_GetPreferredMode(NULL);
+
+  auto * framebuffer = MEM_K0_TO_K1(SYS_AllocateFramebuffer(rmode));
+  console_init(framebuffer, 20, 20, rmode->fbWidth, rmode->xfbHeight, rmode->fbWidth * VI_DISPLAY_PIX_SZ);
+
+  VIDEO_Configure(rmode);
+  VIDEO_SetNextFramebuffer(framebuffer);
+  VIDEO_SetBlack(false);
+  VIDEO_Flush();
+  VIDEO_WaitVSync();
+  if (rmode->viTVMode & VI_NON_INTERLACE)
+    VIDEO_WaitVSync();
+
+  printf("\nKwik Snax Redux!\n");
+
+  while (SYS_MainLoop())
+    VIDEO_WaitVSync();
+
+  return 0;
+}
+
+#endif // __wii__
