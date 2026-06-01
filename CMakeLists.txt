@@ -48,11 +48,11 @@ endif ()
 
 list(APPEND CMAKE_MODULE_PATH "${DEVKITPRO_ROOT}/cmake")
 
-#include(GBA)
+include(GBA)
 #include(NDS)
 #include(3DS)
 #include(GameCube)
-include(Wii)
+#include(Wii)
 
 message(STATUS "${CMAKE_CXX_COMPILER_ID} version: ${CMAKE_CXX_COMPILER_VERSION}")
 
@@ -66,8 +66,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
  include
 )
 
-#gba_create_rom(${PROJECT_NAME})
+gba_create_rom(${PROJECT_NAME})
 #nds_create_rom(${PROJECT_NAME})
 #ctr_create_3dsx(${PROJECT_NAME})
 #ogc_create_dol(${PROJECT_NAME})
-ogc_create_dol(${PROJECT_NAME})
+#ogc_create_dol(${PROJECT_NAME})
