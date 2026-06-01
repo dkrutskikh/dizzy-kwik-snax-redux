@@ -24,7 +24,7 @@
 
 cmake_minimum_required(VERSION 3.31.0 FATAL_ERROR)
 
-project(KwikSnax LANGUAGES CXX VERSION 0.0.0 HOMEPAGE_URL https://github.com/dkrutskikh/dizzy-kwik-snax-redux/)
+project(KwikSnaxRedux LANGUAGES CXX VERSION 0.0.0 HOMEPAGE_URL https://github.com/dkrutskikh/dizzy-kwik-snax-redux/)
 
 add_executable(${PROJECT_NAME})
 
@@ -43,7 +43,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 find_package(DevkitPro COMPONENTS gba nds 3ds switch gamecube wii)
 
 if (NOT DEVKITPRO_FOUND)
-message(FATAL_ERROR "devkitPro not found. Install devkitPro and ensure DEVKITPRO is set.")
+# message(FATAL_ERROR "devkitPro not found. Install devkitPro and ensure DEVKITPRO is set.")
 endif ()
 
 list(APPEND CMAKE_MODULE_PATH "${DEVKITPRO_ROOT}/cmake")
@@ -52,7 +52,7 @@ list(APPEND CMAKE_MODULE_PATH "${DEVKITPRO_ROOT}/cmake")
 #include(NDS)
 #include(3DS)
 #include(GameCube)
-include(Wii)
+#include(Wii)
 
 message(STATUS "${CMAKE_CXX_COMPILER_ID} version: ${CMAKE_CXX_COMPILER_VERSION}")
 
@@ -70,4 +70,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 #nds_create_rom(${PROJECT_NAME})
 #ctr_create_3dsx(${PROJECT_NAME})
 #ogc_create_dol(${PROJECT_NAME})
-ogc_create_dol(${PROJECT_NAME})
+#ogc_create_dol(${PROJECT_NAME})

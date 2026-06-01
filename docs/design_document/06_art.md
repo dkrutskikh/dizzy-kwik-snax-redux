@@ -1,4 +1,4 @@
-# KwikSnax Redux — Art
+# Kwik Snax Redux — Art
 
 ## Overall Style
 

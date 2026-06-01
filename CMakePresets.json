@@ -24,39 +24,54 @@
             }
         },
         {
+            "name": "linux-ninja-release",
+            "displayName": "Linux Ninja release",
+            "description": "Kwik Snax Redux Linux Ninja Release Build",
+            "inherits": "base-release"
+        },
+        {
             "name": "gba-ninja-release",
             "displayName": "Nintendo GBA release",
-            "description": "Nintendo GBA Ninja",
+            "description": "Kwik Snax Redux GBA Ninja Release Build",
             "inherits": "base-release",
             "toolchainFile": "$env{DEVKITPRO}/cmake/GBA.cmake"
         },
         {
             "name": "nds-ninja-release",
             "displayName": "Nintendo NDS release",
-            "description": "Nintendo NDS Ninja",
+            "description": "Kwik Snax Redux NDS Ninja Release Build",
             "inherits": "base-release",
             "toolchainFile": "$env{DEVKITPRO}/cmake/NDS.cmake"
         },
         {
             "name": "3ds-ninja-release",
             "displayName": "Nintendo 3DS release",
-            "description": "Nintendo 3DS Ninja",
+            "description": "Kwik Snax Redux 3DS Ninja Release Build",
             "inherits": "base-release",
             "toolchainFile": "$env{DEVKITPRO}/cmake/3DS.cmake"
         },
         {
             "name": "gamecube-ninja-release",
             "displayName": "Nintendo GameCube release",
-            "description": "Nintendo GameCube Ninja",
+            "description": "Kwik Snax Redux GameCube Ninja Release Build",
             "inherits": "base-release",
             "toolchainFile": "$env{DEVKITPRO}/cmake/GameCube.cmake"
         },
         {
             "name": "wii-ninja-release",
             "displayName": "Nintendo Wii release",
-            "description": "Nintendo Wii Ninja",
+            "description": "Kwik Snax Redux Wii Ninja Release Build",
             "inherits": "base-release",
             "toolchainFile": "$env{DEVKITPRO}/cmake/Wii.cmake"
+        },
+        {
+            "name": "linux-ninja-debug",
+            "displayName": "Linux Ninja debug",
+            "description": "Kwik Snax Redux Linux Ninja Debug Build",
+            "inherits": "linux-ninja-release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
         }
     ],
     "buildPresets": [
@@ -69,6 +84,11 @@
             "name": "default-release",
             "hidden": true,
             "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "linux-ninja-release",
+            "configurePreset": "linux-ninja-release",
+            "inherits": "default-release"
         },
         {
             "name": "gba-ninja-release",
@@ -94,6 +114,11 @@
             "name": "wii-ninja-release",
             "configurePreset": "wii-ninja-release",
             "inherits": "default-release"
+        },
+        {
+            "name": "linux-ninja-debug",
+            "configurePreset": "linux-ninja-debug",
+            "inherits": "default-debug"
         }
     ]
 }

@@ -4,7 +4,7 @@ You are an expert in GameDev and C++ development. Your goal is to build performa
 
 ---
 
-# AGENTS Guidelines for Design Documents
+## AGENTS Guidelines for Design Documents
 
 This document defines **mandatory rules** for AI-assisted writing, editing, and translation of design documentation in this repository.
 
@@ -136,33 +136,6 @@ Rules:
 * English file must exist
 * Russian file must exist
 * Names must match exactly
-
----
-
-## Markdown Format
-
-All documents use Markdown.
-
-Rules:
-
-* Use `#` for title
-* Use `##` for sections
-* Use `###` for subsections
-* Do not skip levels
-
-Correct:
-
-# Title
-
-## Section
-
-### Subsection
-
-Incorrect:
-
-# Title
-
-### Subsection
 
 ---
 
@@ -313,26 +286,6 @@ Incorrect:
 * Item
 
 * Item
-
----
-
-## Code Blocks
-
-Use code blocks only for:
-
-* input mapping
-* state tables
-* examples
-* pseudo rules
-
-Example:
-
-```
-A = Jump
-B = Action
-```
-
-Do not use code blocks for normal text.
 
 ---
 

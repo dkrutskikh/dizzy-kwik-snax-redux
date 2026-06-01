@@ -1,4 +1,4 @@
-# KwikSnax Redux — Controls
+# Kwik Snax Redux — Controls
 
 ## Basic Layout
 

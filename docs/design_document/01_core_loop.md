@@ -1,4 +1,4 @@
-# KwikSnax Redux — Core Loop
+# Kwik Snax Redux — Core Loop
 
 ## Game Session
 

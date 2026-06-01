@@ -1,40 +1,9 @@
-# Dizzy KwikSnax Redux
+# Kwik Snax Redux
 
-KwikSnax Redux is an upcoming homebrew arcade game for the Game Boy Advance.
+## Remake of the Kwik Snax
 
-The game is inspired by classic arcade puzzle-action titles and focuses on fast gameplay, precise controls, and deterministic mechanics.
+Kwik Snax Redux is intended to be a full remake of the original [Kwik Snax](https://yolkfolk.com/games/kwik-snax/), aiming to improve upon the game's presentation and features, while retaining its core mechanics and charm.
 
-This repository contains the full source code of the game.
+## Legal Notice
 
----
-
-## 🎮 About the Game
-
-KwikSnax Redux is designed as a modern retro experience, built from scratch in C++ and running on real Game Boy Advance hardware.
-
-Goals:
-
-- authentic arcade feel
-- runs on real hardware
-- small and fast codebase
-- deterministic gameplay
-- no unnecessary dependencies
-
----
-
-## ✨ Features
-
-- Arcade-style gameplay
-- Built for real GBA hardware
-- Works in emulator and on flashcarts
-- Modern C++ codebase
-- Custom engine
-- Fixed-point math
-- Deterministic simulation
-- CI builds
-
----
-
-## 📸 Screenshots
-
-(coming soon)
+"Dizzy", "The Yolkfolk" and all related characters and titles are trademarks of [Blitz Games Limited](https://www.blitzgames.com/) ("Blitz") and [The Codemasters Software Company Limited](https://www.ea.com/ea-studios/codemasters) ("Codemasters"). All rights reserved. Dizzy and The Yolkfolk created by [The Oliver Twins](https://www.olivertwins.com/).

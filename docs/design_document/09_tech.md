@@ -1,4 +1,4 @@
-# KwikSnax Redux — Tech
+# Kwik Snax Redux — Tech
 
 ## Engine
 
@@ -50,7 +50,6 @@ Profiles must allow:
 - verifying compatibility with the weakest platform
 
 The main profile must match the weakest supported system.
-
 
 ## Limitations (Weakest Platform)
 
