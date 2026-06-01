@@ -147,3 +147,7 @@ int main() {
 }
 
 #endif // __wii__
+
+int main() {
+  return 0;
+}
