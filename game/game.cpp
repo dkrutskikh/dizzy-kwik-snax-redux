@@ -65,7 +65,9 @@ int main() {
 
 #ifdef __3DS__
 
+// clang-format off
 #include <3ds.h>
+// clang-format on
 
 int main() {
   gfxInitDefault();
