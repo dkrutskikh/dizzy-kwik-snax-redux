@@ -51,7 +51,6 @@ Profiles must allow:
 
 The main profile must match the weakest supported system.
 
-
 ## Limitations (Weakest Platform)
 
 Game design must respect the limitations of the weakest platform.

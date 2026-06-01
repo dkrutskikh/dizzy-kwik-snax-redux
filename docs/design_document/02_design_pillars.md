@@ -11,7 +11,6 @@ Gameplay must be precise and fully predictable. Acceptance criteria:
 
 Every player action must produce a consistent result. Deterministic simulation step and fixed update order ensure reproducible behavior. Changes that increase latency, jitter, or step time beyond these thresholds are considered undesirable.
 
-
 ## Real Hardware First
 
 The game is designed primarily for execution on real handheld console hardware.
@@ -43,7 +42,6 @@ Determinism is required for:
 - cooperative gameplay
 - debugging
 - speed-running
-
 
 ## Simple Rules, Deep Mastery
 
