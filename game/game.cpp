@@ -150,6 +150,10 @@ int main() {
 
 #endif // __wii__
 
+#if !defined(__GBA__) && !defined(__NDS__) && !defined(__3DS__) && !defined(__gamecube__) && !defined(__wii__)
+
 int main() {
   return 0;
 }
+
+#endif // !defined(__GBA__) && !defined(__NDS__) && !defined(__3DS__) && !defined(__gamecube__) && !defined(__wii__)

@@ -24,7 +24,7 @@
 
 cmake_minimum_required(VERSION 3.31.0 FATAL_ERROR)
 
-project(KwikSnax LANGUAGES CXX VERSION 0.0.0 HOMEPAGE_URL https://github.com/dkrutskikh/dizzy-kwik-snax-redux/)
+project(KwikSnaxRedux LANGUAGES CXX VERSION 0.0.0 HOMEPAGE_URL https://github.com/dkrutskikh/dizzy-kwik-snax-redux/)
 
 add_executable(${PROJECT_NAME})
 
