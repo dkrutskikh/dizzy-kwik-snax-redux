@@ -86,6 +86,11 @@
             "configuration": "RelWithDebInfo"
         },
         {
+            "name": "linux-ninja-release",
+            "configurePreset": "linux-ninja-release",
+            "inherits": "default-release"
+        },
+        {
             "name": "gba-ninja-release",
             "configurePreset": "gba-ninja-release",
             "inherits": "default-release"
@@ -109,6 +114,11 @@
             "name": "wii-ninja-release",
             "configurePreset": "wii-ninja-release",
             "inherits": "default-release"
+        },
+        {
+            "name": "linux-ninja-debug",
+            "configurePreset": "linux-ninja-debug",
+            "inherits": "default-debug"
         }
     ]
 }
