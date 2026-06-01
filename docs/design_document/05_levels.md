@@ -1,4 +1,4 @@
-# KwikSnax Redux — Levels
+# Kwik Snax Redux — Levels
 
 ## Level Structure
 

@@ -1,4 +1,4 @@
-# KwikSnax Redux — Design Pillars
+# Kwik Snax Redux — Design Pillars
 
 ## Precise Arcade Responsiveness
 

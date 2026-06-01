@@ -1,4 +1,4 @@
-# KwikSnax Redux — Tech
+# Kwik Snax Redux — Tech
 
 ## Движок
 

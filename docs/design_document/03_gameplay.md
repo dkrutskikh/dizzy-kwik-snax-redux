@@ -1,4 +1,4 @@
-# KwikSnax Redux — Gameplay
+# Kwik Snax Redux — Gameplay
 
 ## Basic Rules
 

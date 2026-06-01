@@ -1,4 +1,4 @@
-# KwikSnax Redux — Lore
+# Kwik Snax Redux — Lore
 
 ## Сеттинг
 

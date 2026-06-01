@@ -1,4 +1,4 @@
-# KwikSnax Redux — Audio
+# Kwik Snax Redux — Audio
 
 ## Музыкальный стиль
 
