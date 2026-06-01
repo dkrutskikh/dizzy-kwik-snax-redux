@@ -32,7 +32,8 @@
 set -e -o pipefail
 
 # Get all modified files in the current branch compared to base branch
-FILES_TO_CHECK=$(git diff --name-only HEAD^ | (grep -E ".*\.(cpp|cc|c\+\+|cxx|c|h|hpp|inl|java|js)$" || true) \
+FILES_TO_CHECK=$(git diff --name-only "$(git merge-base origin/main HEAD)"..HEAD \
+                                            | (grep -E ".*\.(cpp|cc|c\+\+|cxx|c|h|hpp|inl|java|js)$" || true) \
                                             | (grep -v "^src/thirdparty/.*/.*" || true))
 
 if [[ -z "$FILES_TO_CHECK" ]]; then
@@ -45,7 +46,7 @@ echo "$FILES_TO_CHECK"
 
 FORMAT_ERRORS=0
 
-for file in $FILES_TO_CHECK; do
+while IFS= read -r file; do
   if [ ! -f "$file" ]; then
     continue  # File may have been deleted
   fi
@@ -55,7 +56,7 @@ for file in $FILES_TO_CHECK; do
     echo "Formatting needed: $file"
     FORMAT_ERRORS=$((FORMAT_ERRORS + 1))
   fi
-done
+done <<< "$FILES_TO_CHECK"
 
 if [ $FORMAT_ERRORS -eq 0 ]; then
   echo "All source code is formatted correctly."
