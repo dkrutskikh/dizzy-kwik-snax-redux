@@ -43,7 +43,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 find_package(DevkitPro COMPONENTS gba nds 3ds switch gamecube wii)
 
 if (NOT DEVKITPRO_FOUND)
-message(FATAL_ERROR "devkitPro not found. Install devkitPro and ensure DEVKITPRO is set.")
+# message(FATAL_ERROR "devkitPro not found. Install devkitPro and ensure DEVKITPRO is set.")
 endif ()
 
 list(APPEND CMAKE_MODULE_PATH "${DEVKITPRO_ROOT}/cmake")
