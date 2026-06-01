@@ -289,26 +289,6 @@ Incorrect:
 
 ---
 
-## Code Blocks
-
-Use code blocks only for:
-
-* input mapping
-* state tables
-* examples
-* pseudo rules
-
-Example:
-
-```
-A = Jump
-B = Action
-```
-
-Do not use code blocks for normal text.
-
----
-
 ## Cross References
 
 When referencing another document, use file name.
