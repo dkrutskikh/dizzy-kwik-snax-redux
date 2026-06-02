@@ -26,6 +26,34 @@ cmake_minimum_required(VERSION 3.31.0 FATAL_ERROR)
 
 project(KwikSnaxRedux LANGUAGES CXX VERSION 0.0.0 HOMEPAGE_URL https://github.com/dkrutskikh/dizzy-kwik-snax-redux/)
 
+# To distinguish between debug and release builds
+set(CMAKE_DEBUG_POSTFIX "d")
+set(CMAKE_RELWITHDEBINFO_POSTFIX "rd")
+
+# Disable regeneration of build system files by IDEs
+set(CMAKE_SUPPRESS_REGENERATION TRUE)
+
+# Enable projects folders
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+#-----------------------------------------------------------------------------------------------------------------------
+# User-provided options
+#-----------------------------------------------------------------------------------------------------------------------
+
+# Setup configuration types
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release;RelWithDebInfo" CACHE STRING "" FORCE)
+
+# Make default 'Release' build
+if (NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Release")
+endif ()
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Compile and linking options
+#-----------------------------------------------------------------------------------------------------------------------
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/engine/cmake")
+
 add_executable(${PROJECT_NAME})
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
