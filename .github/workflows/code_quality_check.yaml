@@ -37,6 +37,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0
+          submodules: recursive
 
       - name: Ensure trapCaches directory exists
         if: ${{ matrix.language == 'c-cpp' }}
