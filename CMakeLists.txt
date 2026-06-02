@@ -61,8 +61,8 @@ add_executable(${PROJECT_NAME})
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-# Enable C++23 Globally
-set(CMAKE_CXX_STANDARD 23)
+# Enable C++20 Globally (use C++23 selectively per target)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -91,7 +91,7 @@ target_sources(${PROJECT_NAME} PRIVATE
 	game/game.cpp
 )
 
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 
 target_include_directories(${PROJECT_NAME} PRIVATE
  include
