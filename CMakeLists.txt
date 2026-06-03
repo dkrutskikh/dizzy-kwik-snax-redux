@@ -69,10 +69,8 @@ target_sources(${PROJECT_NAME} PRIVATE
 	game/game.cpp
 )
 
-list(APPEND CMAKE_MODULE_PATH "${DEVKITPRO_ROOT}/cmake")
-
-include(GBA)
-gba_create_rom(${PROJECT_NAME})
+# include(GBA)
+# gba_create_rom(${PROJECT_NAME})
 
 #include(NDS)
 #nds_create_rom(${PROJECT_NAME})
