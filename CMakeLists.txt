@@ -69,8 +69,17 @@ target_sources(${PROJECT_NAME} PRIVATE
 	game/game.cpp
 )
 
+include(GBA)
 gba_create_rom(${PROJECT_NAME})
+
+#include(NDS)
 #nds_create_rom(${PROJECT_NAME})
+
+#include(3DS)
 #ctr_create_3dsx(${PROJECT_NAME})
+
+#include(GameCube)
 #ogc_create_dol(${PROJECT_NAME})
+
+#include(Wii)
 #ogc_create_dol(${PROJECT_NAME})
