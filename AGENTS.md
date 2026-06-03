@@ -12,6 +12,15 @@ You are an expert in GameDev and C++ development. Your goal is to build performa
 * **Fixes:** Use the `clang-tidy --fix` tool to automatically fix many common issues, and to help code conform to the configured checks.
 * **Linting:** Use `clang-tidy` with a recommended set of checks to catch common issues. Enable compiler warnings (`-Wall -Wextra -Wpedantic`) at build time, and ensure no warnings remain before committing.
 
+## Project Structure
+
+* `/docs` — Doxygen generation templates.
+* `/docs/design_document` — game design document.
+* `/editor` — game editor source code.
+* `/engine` — ToyGine2 git submodule (its own module layout and rules).
+* `/game` — game source code.
+* `/tools` — build helper scripts.
+
 ---
 
 ## AGENTS Guidelines for Design Documents

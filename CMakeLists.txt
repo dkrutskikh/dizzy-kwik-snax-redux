@@ -57,47 +57,19 @@ if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/engine/cmake")
 endif()
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/engine/cmake")
 
+include(ConfigureEngine)
+set(CMAKE_CXX_EXTENSIONS ON)
+include(ConfigureCompiler)
+
 add_executable(${PROJECT_NAME})
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-
-# Enable C++20 Globally (use C++23 selectively per target)
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# Enable C17 Globally
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
-
-find_package(DevkitPro COMPONENTS gba nds 3ds switch gamecube wii)
-
-if (NOT DEVKITPRO_FOUND)
-# message(FATAL_ERROR "devkitPro not found. Install devkitPro and ensure DEVKITPRO is set.")
-endif ()
-
-list(APPEND CMAKE_MODULE_PATH "${DEVKITPRO_ROOT}/cmake")
-
-#include(GBA)
-#include(NDS)
-#include(3DS)
-#include(GameCube)
-#include(Wii)
-
-message(STATUS "${CMAKE_CXX_COMPILER_ID} version: ${CMAKE_CXX_COMPILER_VERSION}")
 
 target_sources(${PROJECT_NAME} PRIVATE
 	game/game.cpp
 )
 
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
-
-target_include_directories(${PROJECT_NAME} PRIVATE
- include
-)
-
-#gba_create_rom(${PROJECT_NAME})
+gba_create_rom(${PROJECT_NAME})
 #nds_create_rom(${PROJECT_NAME})
 #ctr_create_3dsx(${PROJECT_NAME})
 #ogc_create_dol(${PROJECT_NAME})
