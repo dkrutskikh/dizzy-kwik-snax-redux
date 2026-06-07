@@ -21,6 +21,16 @@ You are an expert in GameDev and C++ development. Your goal is to build performa
 * `/game` — game source code.
 * `/tools` — build helper scripts.
 
+## C++ game style guide
+
+* **Data-oriented design:** Organize around data layout, not class hierarchies. Prefer Struct-of-Arrays and contiguous storage for per-frame data.
+* **Zero-cost abstractions:** Abstractions must compile to hand-written equivalents. No `std::function`, virtual dispatch, or type erasure on hot paths; no exceptions or RTTI.
+* **Composition over inheritance:** Build behavior from small components and free functions. Prefer static polymorphism (templates, concepts, CRTP); avoid deep inheritance.
+* **Systems over managers:** Prefer small, single-purpose systems that transform component data over monolithic state-and-behavior managers.
+* **Simulation / presentation split:** Keep deterministic simulation separate from presentation (renderer, audio, UI). Game logic must not depend on frame rate, render order, platform APIs, or PAL/NTSC timing.
+* **Explicit resource lifetime:** Make ownership explicit; no allocation by default and any heap use justified. Prefer handles over raw pointers; avoid global singletons; use RAII at module boundaries.
+* **SOLID where it helps:** Apply SOLID to desktop editor and tooling. On hot paths, defer to measurement and data-oriented reasoning.
+
 ---
 
 ## AGENTS Guidelines for Design Documents
